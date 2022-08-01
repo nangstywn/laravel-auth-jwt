@@ -29,5 +29,6 @@ Route::post('register', [AuthController::class, 'register']);
 
 Route::group(['middleware'=>'auth:api'], function(){
 Route::post('product',[ProductController::class, 'store']);
+Route::delete('product/{id}',[ProductController::class, 'destroy']);
 Route::get('product',[ProductController::class, 'index']);
 });
